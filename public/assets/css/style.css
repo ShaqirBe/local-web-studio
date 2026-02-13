@@ -27,9 +27,25 @@
     align-items: center;
   }
   
-  .logo {
-    font-weight: 600;
+ /* Logo hover animation */
+.logo svg {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover svg {
+  transform: scale(1.05);
+}
+
+/* Mobile-friendly logo */
+@media (max-width: 600px) {
+  .logo svg {
+    width: 60px;   /* smaller overall */
+    height: 60px;
   }
+  .logo-text {
+    display: none; /* hide text on small screens */
+  }
+}
   
   .nav a {
     margin-left: 1.5rem;
@@ -451,3 +467,4 @@
 #formMessage.show {
   opacity: 1;                  /* fade in */
 }
+
