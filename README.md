@@ -41,4 +41,6 @@ EMAIL_PASS=your-app-password
 
 Notes
 
-All sensitive information (email/password) is stored in .env and excluded from Git. The contact form uses AJAX for a smooth, modern user experience.
+All sensitive information (email/password) is stored in .env and excluded from Git. The contact form uses AJAX for a smooth, modern user experience. 
+
+Hello from the team!
