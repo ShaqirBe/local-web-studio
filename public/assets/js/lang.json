@@ -1,0 +1,102 @@
+{
+    "en": {
+      "home": {
+        "heroTitle": "Practical web solutions for real business needs.",
+        "heroText": "Clean, fast, and reliable websites for local businesses."
+      },
+      "services": {
+        "title": "Our Services",
+        "service1": {
+          "name": "Web Presence Basic",
+          "description": "A clean one-page website focused on visibility, trust and direct contact."
+        },
+        "service2": {
+          "name": "Business Website",
+          "description": "A structured multi-page website designed to grow with your business."
+        },
+        "service3": {
+          "name": "Maintenance & Support",
+          "description": "Ongoing technical care so you can focus on running your business."
+        }
+      },
+      "process": {
+        "title": "How We Work",
+        "step1": "Short analysis",
+        "step2": "Clear proposal",
+        "step3": "Build & test",
+        "step4": "Launch & support"
+      },
+      "about": {
+        "title": "About Local Web Studio",
+        "philosophy": "We focus on simplicity, clarity, and performance. Every website we build is designed to help local businesses communicate their value clearly, attract customers efficiently, and operate without technical headaches.",
+        "team": "Local Web Studio is a small, skilled team of web professionals. We combine design, coding, and business insight to deliver solutions that work."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "text": "Send us a message and we will get back to you quickly."
+      },
+      "work": {
+        "title": "Selected Work",
+        "project1": {
+          "name": "Pizzeria Aroma",
+          "description": "A fast, simple website with direct call actions and Google Maps integration."
+        }
+      },
+      "legal": {
+        "title": "Legal Information",
+        "impressum": "Local Web Studio, Owner: Local Web Studio Team, Address: 123 Main Street, City, Country, Email: info@localwebstudio.com",
+        "privacy": "We do not collect unnecessary personal data. All submitted contact forms are stored securely and only used to respond to inquiries. No data is shared with third parties without consent.",
+        "disclaimer": "All content is provided for informational purposes. We are not responsible for the use of third-party websites or services linked from this site."
+      }
+    },
+    "de": {
+      "home": {
+        "heroTitle": "Praktische Weblösungen für echte Geschäftsbedürfnisse.",
+        "heroText": "Saubere, schnelle und zuverlässige Websites für lokale Unternehmen."
+      },
+      "services": {
+        "title": "Unsere Dienstleistungen",
+        "service1": {
+          "name": "Web Präsenz Basis",
+          "description": "Eine saubere Ein-Seiten-Website, die auf Sichtbarkeit, Vertrauen und direkte Kontaktaufnahme ausgelegt ist."
+        },
+        "service2": {
+          "name": "Business-Website",
+          "description": "Eine strukturierte Multi-Seiten-Website, die mit Ihrem Unternehmen wächst."
+        },
+        "service3": {
+          "name": "Wartung & Support",
+          "description": "Laufende technische Betreuung, damit Sie sich auf Ihr Geschäft konzentrieren können."
+        }
+      },
+      "process": {
+        "title": "Wie wir arbeiten",
+        "step1": "Kurze Analyse",
+        "step2": "Klare Vorschläge",
+        "step3": "Erstellen & Testen",
+        "step4": "Launch & Support"
+      },
+      "about": {
+        "title": "Über Local Web Studio",
+        "philosophy": "Wir konzentrieren uns auf Einfachheit, Klarheit und Leistung. Jede von uns erstellte Website hilft lokalen Unternehmen, ihren Wert klar zu kommunizieren, Kunden effizient anzusprechen und ohne technische Probleme zu arbeiten.",
+        "team": "Local Web Studio ist ein kleines, erfahrenes Team von Webprofis. Wir kombinieren Design, Coding und Geschäftssinn, um funktionierende Lösungen zu liefern."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "text": "Senden Sie uns eine Nachricht und wir antworten schnell."
+      },
+      "work": {
+        "title": "Ausgewählte Projekte",
+        "project1": {
+          "name": "Pizzeria Aroma",
+          "description": "Eine schnelle, einfache Website mit direkten Anruffunktionen und Google Maps-Integration."
+        }
+      },
+      "legal": {
+        "title": "Rechtliche Hinweise",
+        "impressum": "Local Web Studio, Inhaber: Local Web Studio Team, Adresse: 123 Hauptstraße, Stadt, Land, E-Mail: info@localwebstudio.com",
+        "privacy": "Wir sammeln keine unnötigen personenbezogenen Daten. Alle übermittelten Kontaktformulare werden sicher gespeichert und nur zur Beantwortung von Anfragen verwendet. Keine Daten werden ohne Zustimmung an Dritte weitergegeben.",
+        "disclaimer": "Alle Inhalte dienen nur zu Informationszwecken. Wir sind nicht verantwortlich für die Nutzung von verlinkten Websites oder Diensten Dritter."
+      }
+    }
+  }

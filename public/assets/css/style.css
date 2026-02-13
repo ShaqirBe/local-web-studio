@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #F7F7F7;
+    color: #111;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 1.5rem;
+  }
+  
+  .header {
+    padding: 1.5rem 0;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-weight: 600;
+  }
+  
+  .nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #111;
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    max-width: 680px;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid #111;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .btn.primary {
+    display: inline-block;   /* ky është çelësi për transform të funksionojë */
+    background: #111;
+    color: #fff;
+    padding: 0.6rem 1.2rem;  /* siguron hapësirë të bukur */
+    border-radius: 6px;      /* opsionale për soft vibe */
+    text-decoration: none;    /* hiq underline për <a> */
+    transition: all 0.25s ease;
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* opsionale, për premium vibe */
+}
+  
+  .btn.secondary {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    padding: 0.6rem 1.2rem;  /* siguron hapësirë të bukur */
+    border-radius: 6px;      /* opsionale për soft vibe */
+    text-decoration: none;    /* hiq underline për <a> */
+    transition: all 0.25s ease;
+  }
+
+  .btn.secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .btn {
+    transition: all 0.25s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .hero {
+    padding: 7rem 0;
+    background: linear-gradient(
+      180deg,
+      #F7F7F7 0%,
+      #FFFFFF 100%
+    );
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    max-width: 700px;
+  }
+  
+  .hero p {
+    margin: 1.2rem 0;
+    color: #555;
+  }
+
+  .hero h1,
+  .hero p,
+  .who p {
+  max-width: 720px;
+}
+  
+  .hero-actions {
+    margin-top: 2rem;
+  }
+  
+  .trust {
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 1.5rem 0;
+  }
+  
+  .trust-grid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: rgb(60, 58, 58);
+  }
+
+  .trust-grid span {
+    position: relative;
+    display: inline-block;       
+    padding: 0.3rem 0.8rem;      
+    border: 1px solid transparent; /* fillimisht transparent për gradient */
+    border-radius: 8px;          
+    font-size: 0.95rem;          
+    transition: all 0.3s ease;
+    
+    /* Gradient border me pseudo-element */
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(90deg, #6a11cb, #2575fc) border-box;
+    border: 1px solid transparent; /* bën gradient të dukshëm */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+  }
+  
+  /* Hover efekt */
+  .trust-grid span:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transform: translateY(-2px); /* pak “lift” për interaktivitet */
+  }
+  
+  .trust-grid span::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3A6FF7;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .trust-grid,
+    .steps {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  
+    .nav {
+      display: none; /* version 1: pa menu mobile */
+    }
+  }
+  
+  .solutions {
+    padding: 5rem 0;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+  }
+
+  .card {
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  
+  .who {
+    padding: 3rem 0;
+    text-align: center;
+    color: #555;
+  }
+  
+  .process {
+    padding: 5rem 0;
+  }
+  
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .step {
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+  }
+
+  .step {
+    transition: all 0.3 ease;
+  }
+
+  .step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  
+  .work {
+    padding: 5rem 0;
+  }
+  
+  .work-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
+  }
+
+  .work-description .btn.secondary {
+    background: none;
+    border: 1px solid #111;
+    color: #111;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .work-description .btn.secondary:hover {
+    background: #111;
+    color: #fff;
+  }
+  
+  .cta {
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .footer {
+    padding: 2rem 0;
+    font-size: 0.85rem;
+    border-top: 1px solid #E5E5E5;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero.small {
+    padding: 4rem 0;
+  }
+  
+  .service-block {
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .service-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  
+  .service-block ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    color: #555;
+  }
+  
+  .service-block li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 4rem 0;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    margin-top: 0.4rem;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3rem;
+    padding: 4rem 0;
+  }
+  
+  .process-step {
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    padding: 2.5rem;
+  }
+  
+  .step-number {
+    display: block;
+    font-size: 0.8rem;
+    color: #3A6FF7;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-grid {
+    padding: 4rem 0;
+  }
+  
+  .work-item {
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    padding: 3rem;
+  }
+  
+  .work-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+  }
+  
+  .work-description p {
+    margin-bottom: 0.8rem;
+  }
+
+  .dark svg text,
+.dark svg rect,
+.dark svg line {
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+
+.about h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.about p, .about ul {
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.about ul {
+  padding-left: 1.2rem;
+}
+
+.about li {
+  margin-bottom: 0.5rem;
+}
+
+.legal h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.legal p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+#formMessage {
+  margin-top: 1rem;
+  opacity: 0;                  /* start invisible */
+  transition: opacity 0.5s ease;
+  font-weight: 500;
+}
+#formMessage.show {
+  opacity: 1;                  /* fade in */
+}
