@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Local Web Studio</title>
   <meta name="description" content="Clean, fast and reliable websites for local businesses." />
+  <meta name="theme-color" content="#111111" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://localwebstudio.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Local Web Studio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Local Web Studio" />
+  <meta property="og:description" content="Clean, fast and reliable websites for local businesses." />
+  <meta property="og:url" content="https://localwebstudio.com/" />
+  <meta property="og:image" content="https://localwebstudio.com/assets/images/webFoto.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Local Web Studio" />
+  <meta name="twitter:description" content="Clean, fast and reliable websites for local businesses." />
+  <meta name="twitter:image" content="https://localwebstudio.com/assets/images/webFoto.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/images/logo.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +33,9 @@
 </head>
 <body>
 
+<!-- Header -->
 <header class="header">
-    
   <div class="container">
-    <!-- Logo SVG inline -->
     <a href="index.html" class="logo">
       <svg width="250" height="70" viewBox="0 0 440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -29,34 +47,32 @@
             <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="rgba(0,0,0,0.25)" />
           </filter>
         </defs>
-    
-        <!-- Geometric icon -->
         <rect x="0" y="10" width="50" height="50" rx="12" fill="url(#iconGradient)"/>
         <line x1="12" y1="22" x2="38" y2="22" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
         <line x1="12" y1="32" x2="38" y2="32" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
         <line x1="12" y1="42" x2="38" y2="42" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-    
-        <!-- Logo text -->
         <text x="70" y="50" class="logo-text" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
         font-size="28" font-weight="700" letter-spacing="0.05em" fill="#111" filter="url(#textShadow)">
-    Local Web Studio
-  </text>
+        Local Web Studio
+        </text>
       </svg>
     </a>
-    
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="process.html">Process</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="btn">Contact</a>
-      </nav>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn">Contact</a>
+    </nav>
   </div>
 </header>
 
-<section class="hero reveal">
-  <div class="container">
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
     <h1>Websites that work for local businesses</h1>
     <p>Simple, fast and focused on visibility, calls and clarity.</p>
     <div class="hero-actions">
@@ -66,6 +82,7 @@
   </div>
 </section>
 
+<!-- Trust Section -->
 <section class="trust">
   <div class="container trust-grid">
     <span>Built for real businesses</span>
@@ -75,6 +92,7 @@
   </div>
 </section>
 
+<!-- Solutions Section -->
 <section class="solutions reveal">
   <div class="container">
     <h2>What we do</h2>
@@ -95,6 +113,7 @@
   </div>
 </section>
 
+<!-- Who Section -->
 <section class="who">
   <div class="container">
     <p>
@@ -104,6 +123,7 @@
   </div>
 </section>
 
+<!-- Process Section -->
 <section class="process reveal">
   <div class="container">
     <h2>How we work</h2>
@@ -116,6 +136,7 @@
   </div>
 </section>
 
+<!-- Work Section -->
 <section class="work reveal">
   <div class="container">
     <h2>Featured work</h2>
@@ -125,11 +146,12 @@
         A simple, fast website with direct call actions and Google Maps integration.
         Built to reduce friction for customers and staff.
       </p>
-      <a href="https://www.pizzeria-aroma-peckelsheim.de" target="_blank" class="btn secondary">Visit Website</a>
+      <a href="https://www.pizzeria-aroma-peckelsheim.de" target="_blank" rel="noopener noreferrer" class="btn secondary">Visit Website</a>
     </div>
   </div>
 </section>
 
+<!-- CTA Section -->
 <section class="cta">
   <div class="container">
     <h2>Looking for a clear and reliable website?</h2>
@@ -137,6 +159,7 @@
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <span>© Local Web Studio</span>
