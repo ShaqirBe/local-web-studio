@@ -211,11 +211,40 @@ function setupCaseStudySlider() {
 
   let activeIndex = 0;
   let autoTimer = null;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  const dotWrap = document.createElement('div');
+  dotWrap.className = 'slider-dots';
+  dotWrap.setAttribute('aria-label', 'Case study slide selector');
+
+  const dots = slides.map((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'slider-dot';
+    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+    dot.addEventListener('click', () => {
+      showSlide(index);
+      restartAutoRotate();
+    });
+    dotWrap.appendChild(dot);
+    return dot;
+  });
+
+  const controls = slider.querySelector('.slider-controls');
+  if (controls) {
+    controls.insertBefore(dotWrap, nextBtn);
+  }
 
   const showSlide = (index) => {
     activeIndex = (index + slides.length) % slides.length;
     slides.forEach((slide, idx) => {
       slide.classList.toggle('is-active', idx === activeIndex);
+    });
+    dots.forEach((dot, idx) => {
+      const isActive = idx === activeIndex;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
     });
   };
 
@@ -235,6 +264,36 @@ function setupCaseStudySlider() {
     showSlide(activeIndex + 1);
     restartAutoRotate();
   });
+
+  slider.addEventListener(
+    'touchstart',
+    (event) => {
+      const touch = event.changedTouches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    },
+    { passive: true }
+  );
+
+  slider.addEventListener(
+    'touchend',
+    (event) => {
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+      const swipeThreshold = 45;
+
+      if (Math.abs(deltaX) > swipeThreshold && Math.abs(deltaY) < 70) {
+        if (deltaX < 0) {
+          showSlide(activeIndex + 1);
+        } else {
+          showSlide(activeIndex - 1);
+        }
+        restartAutoRotate();
+      }
+    },
+    { passive: true }
+  );
 
   showSlide(0);
   restartAutoRotate();

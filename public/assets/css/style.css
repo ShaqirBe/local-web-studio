@@ -407,6 +407,7 @@ body[data-theme='dark'] .hero::before {
   left: 1.5rem;
   bottom: 1.2rem;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -423,6 +424,27 @@ body[data-theme='dark'] .hero::before {
 
 .slider-btn:hover {
   filter: brightness(0.98);
+}
+
+.slider-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.slider-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 0;
+  background: color-mix(in oklab, var(--text-soft) 40%, transparent);
+  cursor: pointer;
+  padding: 0;
+}
+
+.slider-dot.is-active {
+  width: 20px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
 }
 
 .stats-grid {
@@ -712,6 +734,10 @@ body[data-theme='dark'] .hero::before {
 
   .hero.small {
     padding: 4.6rem 0 3.6rem;
+  }
+
+  .slider-shell {
+    min-height: 270px;
   }
 }
 
