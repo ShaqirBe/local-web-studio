@@ -7,16 +7,16 @@
       "services": {
         "title": "Our Services",
         "service1": {
-          "name": "Web Presence Basic",
-          "description": "A clean one-page website focused on visibility, trust and direct contact."
+          "name": "Web Presence & Business Websites",
+          "description": "Modern one-page and multi-page websites built for visibility, trust, and customer action."
         },
         "service2": {
-          "name": "Business Website",
-          "description": "A structured multi-page website designed to grow with your business."
+          "name": "Shopify Store Setup (Start to Finish)",
+          "description": "Complete Shopify support from start to end: planning, design, setup, launch, and ongoing improvement."
         },
         "service3": {
-          "name": "Maintenance & Support",
-          "description": "Ongoing technical care so you can focus on running your business."
+          "name": "Maintenance & Growth Support",
+          "description": "Ongoing technical care and iterative improvements for websites and Shopify stores."
         }
       },
       "process": {
@@ -57,16 +57,16 @@
       "services": {
         "title": "Unsere Dienstleistungen",
         "service1": {
-          "name": "Web Präsenz Basis",
-          "description": "Eine saubere Ein-Seiten-Website, die auf Sichtbarkeit, Vertrauen und direkte Kontaktaufnahme ausgelegt ist."
+          "name": "Web-Präsenz & Business-Websites",
+          "description": "Moderne One-Page- und Multi-Page-Websites für Sichtbarkeit, Vertrauen und Kundenanfragen."
         },
         "service2": {
-          "name": "Business-Website",
-          "description": "Eine strukturierte Multi-Seiten-Website, die mit Ihrem Unternehmen wächst."
+          "name": "Shopify-Shop-Setup (von Anfang bis Ende)",
+          "description": "Komplette Shopify-Unterstützung von Anfang bis Ende: Planung, Design, Einrichtung, Launch und laufende Optimierung."
         },
         "service3": {
-          "name": "Wartung & Support",
-          "description": "Laufende technische Betreuung, damit Sie sich auf Ihr Geschäft konzentrieren können."
+          "name": "Wartung & Wachstumssupport",
+          "description": "Laufende technische Betreuung und iterative Verbesserungen für Websites und Shopify-Shops."
         }
       },
       "process": {
