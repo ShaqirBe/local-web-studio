@@ -195,6 +195,103 @@ function setupContactForm() {
   });
 }
 
+function setupCaseStudySlider() {
+  const slider = document.querySelector('[data-case-slider]');
+  if (!slider) {
+    return;
+  }
+
+  const slides = Array.from(slider.querySelectorAll('[data-slide]'));
+  const prevBtn = slider.querySelector('[data-slide-prev]');
+  const nextBtn = slider.querySelector('[data-slide-next]');
+
+  if (!slides.length || !prevBtn || !nextBtn) {
+    return;
+  }
+
+  let activeIndex = 0;
+  let autoTimer = null;
+
+  const showSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('is-active', idx === activeIndex);
+    });
+  };
+
+  const restartAutoRotate = () => {
+    window.clearInterval(autoTimer);
+    autoTimer = window.setInterval(() => {
+      showSlide(activeIndex + 1);
+    }, 5000);
+  };
+
+  prevBtn.addEventListener('click', () => {
+    showSlide(activeIndex - 1);
+    restartAutoRotate();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    showSlide(activeIndex + 1);
+    restartAutoRotate();
+  });
+
+  showSlide(0);
+  restartAutoRotate();
+}
+
+function setupStatsCounters() {
+  const counters = Array.from(document.querySelectorAll('[data-counter]'));
+  if (!counters.length) {
+    return;
+  }
+
+  const animateCounter = (el) => {
+    const target = Number(el.getAttribute('data-target') || '0');
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+
+    if (!Number.isFinite(target) || target <= 0) {
+      el.textContent = `${prefix}0${suffix}`;
+      return;
+    }
+
+    const duration = 1300;
+    const start = performance.now();
+
+    const update = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - (1 - progress) ** 3;
+      const value = Math.round(target * eased);
+      el.textContent = `${prefix}${value}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    counters.forEach((counter) => observer.observe(counter));
+  } else {
+    counters.forEach((counter) => animateCounter(counter));
+  }
+}
+
 function setupScrollUi() {
   const progress = document.createElement('div');
   progress.className = 'scroll-progress';
@@ -232,4 +329,6 @@ setupMobileNavigation();
 setupActiveNav();
 setupTypedHero();
 setupContactForm();
+setupCaseStudySlider();
+setupStatsCounters();
 setupScrollUi();

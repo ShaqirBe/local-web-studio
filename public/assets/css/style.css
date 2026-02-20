@@ -208,6 +208,8 @@ body[data-theme='dark'] .hero::before {
 .process,
 .work,
 .testimonials,
+.case-slider,
+.stats,
 .cta,
 .about,
 .legal,
@@ -359,6 +361,90 @@ body[data-theme='dark'] .hero::before {
   padding: 0.4rem 0.85rem;
   font-size: 0.86rem;
   font-weight: 600;
+}
+
+.case-slider .container > h2,
+.stats .container > h2 {
+  margin-bottom: 1rem;
+}
+
+.slider-shell {
+  position: relative;
+  min-height: 230px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 1.5rem 1.5rem 4rem;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.slide h3 {
+  margin-bottom: 0.8rem;
+}
+
+.slide p {
+  margin-bottom: 0.6rem;
+}
+
+.slide.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.slider-controls {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slider-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.slider-btn:hover {
+  filter: brightness(0.98);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.4rem;
+}
+
+.stat-number {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  color: var(--primary-strong);
 }
 
 .step-number {
