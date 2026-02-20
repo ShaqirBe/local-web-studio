@@ -82,13 +82,20 @@ a {
   padding: 0.9rem 0;
 }
 
-.logo svg {
+.logo {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text);
+}
+
+.logo-image {
   height: 54px;
   width: auto;
+  display: block;
   transition: transform 0.25s ease;
 }
 
-.logo:hover svg {
+.logo:hover .logo-image {
   transform: translateY(-1px) scale(1.01);
 }
 
@@ -742,11 +749,7 @@ body[data-theme='dark'] .hero::before {
 }
 
 @media (max-width: 600px) {
-  .logo-text {
-    display: none;
-  }
-
-  .logo svg {
+  .logo-image {
     height: 46px;
   }
 }

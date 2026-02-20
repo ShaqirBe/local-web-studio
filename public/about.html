@@ -34,31 +34,15 @@
 <header class="header">
   <div class="container">
     <!-- Logo SVG inline -->
-    <a href="index.html" class="logo">
-      <svg width="250" height="70" viewBox="0 0 440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="iconGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#333" />
-            <stop offset="100%" stop-color="#111" />
-          </linearGradient>
-          <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="rgba(0,0,0,0.25)" />
-          </filter>
-        </defs>
-    
-        <!-- Geometric icon -->
-        <rect x="0" y="10" width="50" height="50" rx="12" fill="url(#iconGradient)"/>
-        <line x1="12" y1="22" x2="38" y2="22" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-        <line x1="12" y1="32" x2="38" y2="32" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-        <line x1="12" y1="42" x2="38" y2="42" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-    
-        <!-- Logo text -->
-        <text x="70" y="50" class="logo-text" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-        font-size="28" font-weight="700" letter-spacing="0.05em" fill="#111" filter="url(#textShadow)">
-    Local Web Studio
-  </text>
-      </svg>
+    <a href="index.html" class="logo" aria-label="Local Web Studio home">
+      <picture>
+        <source media="(max-width: 540px)" srcset="assets/images/logo-icon.svg" />
+        <source media="(max-width: 980px)" srcset="assets/images/logo-compact.svg" />
+        <img src="assets/images/logo-full.svg" class="logo-image" alt="Local Web Studio" width="284" height="56" />
+      </picture>
     </a>
+
+
     <nav class="nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
