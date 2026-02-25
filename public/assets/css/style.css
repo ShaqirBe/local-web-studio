@@ -749,6 +749,127 @@ body[data-theme='dark'] .hero::before {
   pointer-events: auto;
 }
 
+.chat-widget {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1300;
+}
+
+.chat-panel {
+  width: min(350px, calc(100vw - 2rem));
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transform-origin: bottom left;
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.chat-widget.open .chat-panel {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface-soft) 74%, white 26%);
+}
+
+.chat-header h3 {
+  font-size: 0.95rem;
+  letter-spacing: 0;
+}
+
+.chat-toggle {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 170px;
+  max-height: 260px;
+  padding: 0.75rem;
+  overflow-y: auto;
+}
+
+.chat-msg {
+  margin: 0;
+  padding: 0.52rem 0.65rem;
+  border-radius: 10px;
+  max-width: 90%;
+  font-size: 0.91rem;
+  line-height: 1.45;
+}
+
+.chat-msg.bot {
+  align-self: flex-start;
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.chat-msg.user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #fff;
+}
+
+.chat-form {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.72rem;
+  border-top: 1px solid var(--border);
+}
+
+.chat-form input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.52rem 0.62rem;
+  font: inherit;
+}
+
+.chat-form button,
+.chat-launcher {
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.5rem 0.82rem;
+  cursor: pointer;
+}
+
+.chat-launcher {
+  box-shadow: var(--shadow);
+}
+
+.chat-widget.open .chat-launcher {
+  display: none;
+}
+
 @keyframes blinkCursor {
   0%,
   45% {
@@ -846,6 +967,16 @@ body[data-theme='dark'] .hero::before {
 @media (max-width: 600px) {
   .logo-image {
     height: 46px;
+  }
+
+  .chat-widget {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .chat-panel {
+    width: 100%;
   }
 }
 

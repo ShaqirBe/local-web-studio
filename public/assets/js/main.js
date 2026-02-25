@@ -383,6 +383,125 @@ function setupScrollUi() {
   updateScrollUi();
 }
 
+function setupChatWidget() {
+  const chatRoot = document.createElement('section');
+  chatRoot.className = 'chat-widget open';
+  chatRoot.setAttribute('aria-label', 'Website assistant chat');
+
+  const panel = document.createElement('div');
+  panel.className = 'chat-panel';
+
+  const header = document.createElement('div');
+  header.className = 'chat-header';
+
+  const title = document.createElement('h3');
+  title.textContent = 'Live Assistant';
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'chat-toggle';
+  toggle.setAttribute('aria-expanded', 'true');
+  toggle.setAttribute('aria-label', 'Minimize chat');
+  toggle.textContent = '−';
+  header.append(title, toggle);
+
+  const messages = document.createElement('div');
+  messages.className = 'chat-messages';
+  messages.setAttribute('role', 'log');
+  messages.setAttribute('aria-live', 'polite');
+
+  const form = document.createElement('form');
+  form.className = 'chat-form';
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.name = 'message';
+  input.placeholder = 'Type your message...';
+  input.autocomplete = 'off';
+  input.required = true;
+
+  const send = document.createElement('button');
+  send.type = 'submit';
+  send.textContent = 'Send';
+  form.append(input, send);
+
+  panel.append(header, messages, form);
+
+  const launcher = document.createElement('button');
+  launcher.type = 'button';
+  launcher.className = 'chat-launcher';
+  launcher.textContent = 'Chat';
+  launcher.setAttribute('aria-label', 'Open chat');
+  launcher.hidden = true;
+
+  chatRoot.append(panel, launcher);
+  document.body.appendChild(chatRoot);
+
+  const addMessage = (author, text) => {
+    const msg = document.createElement('p');
+    msg.className = `chat-msg ${author}`;
+    msg.textContent = text;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  };
+
+  const openChat = () => {
+    chatRoot.classList.add('open');
+    launcher.hidden = true;
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Minimize chat');
+    input.focus();
+  };
+
+  const closeChat = () => {
+    chatRoot.classList.remove('open');
+    launcher.hidden = false;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open chat');
+  };
+
+  const getBotReply = (text) => {
+    const value = text.toLowerCase();
+    if (value.includes('price') || value.includes('cost') || value.includes('quote')) {
+      return 'Great question. Share your project type and timeline, and we can provide a quick quote.';
+    }
+    if (value.includes('service') || value.includes('website') || value.includes('shopify')) {
+      return 'We help with business websites, Shopify setup, and ongoing support. Tell me what you need most.';
+    }
+    if (value.includes('contact') || value.includes('call') || value.includes('email')) {
+      return 'You can use the Contact page and we will get back to you quickly.';
+    }
+    return 'Thanks for your message. Tell me your goal and I can guide you to the right service.';
+  };
+
+  toggle.addEventListener('click', () => {
+    if (chatRoot.classList.contains('open')) {
+      closeChat();
+    } else {
+      openChat();
+    }
+  });
+
+  launcher.addEventListener('click', openChat);
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const userText = input.value.trim();
+    if (!userText) {
+      return;
+    }
+
+    addMessage('user', userText);
+    input.value = '';
+
+    window.setTimeout(() => {
+      addMessage('bot', getBotReply(userText));
+    }, 400);
+  });
+
+  addMessage('bot', "Hey, Welcome! Is there anything specific you are looking for? I'm here to help.");
+}
+
 setupRevealAnimations();
 setupMobileNavigation();
 setupActiveNav();
@@ -391,3 +510,4 @@ setupContactForm();
 setupCaseStudySlider();
 setupStatsCounters();
 setupScrollUi();
+setupChatWidget();
