@@ -1,0 +1,14 @@
+<svg width="284" height="56" viewBox="0 0 284 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local Web Studio">
+  <defs>
+    <linearGradient id="fullLogoGradient" x1="1" y1="7" x2="43" y2="49" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B7FFF"/>
+      <stop offset="1" stop-color="#00B8A9"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="7" width="42" height="42" rx="12" fill="url(#fullLogoGradient)"/>
+  <path d="M14 21H31" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M14 28H27" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M14 35H31" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="33" cy="28" r="2.2" fill="white"/>
+  <text x="58" y="35" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="700" letter-spacing="0.02em" fill="#12213B">Local Web Studio</text>
+</svg>

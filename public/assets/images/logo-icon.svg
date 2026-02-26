@@ -1,0 +1,13 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local Web Studio">
+  <defs>
+    <linearGradient id="iconLogoGradient" x1="7" y1="7" x2="49" y2="49" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B7FFF"/>
+      <stop offset="1" stop-color="#00B8A9"/>
+    </linearGradient>
+  </defs>
+  <rect x="7" y="7" width="42" height="42" rx="12" fill="url(#iconLogoGradient)"/>
+  <path d="M20 21H37" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M20 28H33" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M20 35H37" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="39" cy="28" r="2.2" fill="white"/>
+</svg>
