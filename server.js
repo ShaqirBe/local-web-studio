@@ -20,7 +20,31 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(express.json({ limit: '10kb' }));
-app.use(express.static('public'));
+
+app.use((req, res, next) => {
+  const host = req.get('host') || '';
+  const path = req.path || '/';
+
+  if (host.toLowerCase() === 'www.lwswarburg.de') {
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    return res.redirect(301, `https://lwswarburg.de${path}${query}`);
+  }
+
+  if (path === '/index.html') {
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    return res.redirect(301, `/${query}`);
+  }
+
+  if (path.endsWith('.html')) {
+    const cleanPath = path.slice(0, -5);
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    return res.redirect(301, `${cleanPath}${query}`);
+  }
+
+  return next();
+});
+
+app.use(express.static('public', { extensions: ['html'] }));
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',

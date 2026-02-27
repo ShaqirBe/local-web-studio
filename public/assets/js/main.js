@@ -79,11 +79,12 @@ function setupMobileNavigation() {
 }
 
 function setupActiveNav() {
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const path = window.location.pathname.split('/').pop() || '';
+  const activePath = path === '' ? '/' : `/${path.replace(/\.html$/, '')}`;
 
   document.querySelectorAll('.nav a').forEach((link) => {
     const href = link.getAttribute('href');
-    if (href === path) {
+    if (href === activePath) {
       link.classList.add('active');
     }
   });
