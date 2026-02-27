@@ -30,17 +30,27 @@ Getting Started
 
     1.	Clone the repository: git clone <repo-url> && cd local-web-studio
     2.	Install dependencies: npm install
-    3.	Create a .env file with your email credentials:
+    3.	Create your local .env from the template:
+       cp .env.example .env
+    4.	Fill .env with your credentials:
 
 PORT=3000
 EMAIL_USER=youremail@gmail.com
 EMAIL_PASS=your-app-password
 
-    4.	Start the server: node server.js
-    5.	Open in your browser at http://localhost:3000
+    5.	Start the server: node server.js
+    6.	Open in your browser at http://localhost:3000
+
+Production / Hosting
+
+Do not upload .env to GitHub. In production, set the same keys directly in your hosting provider's Environment Variables settings:
+
+    • PORT
+    • EMAIL_USER
+    • EMAIL_PASS
 
 Notes
 
-All sensitive information (email/password) is stored in .env and excluded from Git. The contact form uses AJAX for a smooth, modern user experience. 
+All sensitive information is stored in environment variables and excluded from Git. The contact form uses AJAX for a smooth, modern user experience.
 
 Hello from the team!
