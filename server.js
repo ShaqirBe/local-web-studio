@@ -5,10 +5,15 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const EMAIL_USER = process.env.EMAIL_USER || process.env.EMAIL || process.env.email;
+const EMAIL_USER =
+  process.env.EMAIL_USER ||
+  process.env.EMAIL ||
+  process.env.email;
 const EMAIL_PASS =
   process.env.EMAIL_PASSWORD ||
   process.env.EMAIL_PASS ||
+  process.env.PASSWORD ||
+  process.env.password ||
   process.env.PASS ||
   process.env.pass;
 

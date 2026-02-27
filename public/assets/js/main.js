@@ -172,21 +172,25 @@ function setupContactForm() {
         throw new Error(payload.error || 'Server error');
       }
 
-      formMessage.style.color = '#0b8f5a';
+      formMessage.classList.remove('error');
+      formMessage.classList.add('success');
       formMessage.textContent = payload.message || 'Your request has been sent successfully!';
       formMessage.classList.add('show');
       contactForm.reset();
 
       setTimeout(() => {
         formMessage.classList.remove('show');
+        formMessage.classList.remove('success');
       }, 4000);
     } catch (err) {
-      formMessage.style.color = '#cc2f3f';
+      formMessage.classList.remove('success');
+      formMessage.classList.add('error');
       formMessage.textContent = err.message || 'There was an error sending your request. Please try again.';
       formMessage.classList.add('show');
 
       setTimeout(() => {
         formMessage.classList.remove('show');
+        formMessage.classList.remove('error');
       }, 4500);
     } finally {
       if (submitButton) {

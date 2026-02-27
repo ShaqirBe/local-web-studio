@@ -695,6 +695,14 @@ body[data-theme='dark'] .hero::before {
   opacity: 1;
 }
 
+#formMessage.success {
+  color: #0b8f5a;
+}
+
+#formMessage.error {
+  color: #cc2f3f;
+}
+
 .menu-toggle,
 .theme-toggle {
   border: 1px solid var(--border);
