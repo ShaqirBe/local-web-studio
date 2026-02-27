@@ -5,8 +5,12 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const EMAIL_USER = process.env.EMAIL_USER;
-const EMAIL_PASS = process.env.EMAIL_PASS;
+const EMAIL_USER = process.env.EMAIL_USER || process.env.EMAIL || process.env.email;
+const EMAIL_PASS =
+  process.env.EMAIL_PASSWORD ||
+  process.env.EMAIL_PASS ||
+  process.env.PASS ||
+  process.env.pass;
 
 app.set('trust proxy', 1);
 app.disable('x-powered-by');
