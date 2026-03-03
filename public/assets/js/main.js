@@ -357,10 +357,6 @@ function setupStatsCounters() {
 }
 
 function setupScrollUi() {
-  const progress = document.createElement('div');
-  progress.className = 'scroll-progress';
-  document.body.appendChild(progress);
-
   const backToTop = document.createElement('button');
   backToTop.className = 'back-to-top';
   backToTop.type = 'button';
@@ -369,10 +365,6 @@ function setupScrollUi() {
   document.body.appendChild(backToTop);
 
   const updateScrollUi = () => {
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const ratio = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
-    progress.style.width = `${ratio}%`;
-
     if (window.scrollY > 320) {
       backToTop.classList.add('show');
     } else {
