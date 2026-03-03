@@ -77,22 +77,22 @@
     <form id="contactForm" class="contact-form">
       <label>
         Business name
-        <input type="text" name="business" required>
+        <input type="text" name="business" autocomplete="organization" required>
       </label>
     
       <label>
         Email
-        <input type="email" name="email" required>
+        <input type="email" name="email" autocomplete="email" required>
       </label>
     
       <label>
         Website (optional)
-        <input type="url" name="website">
+        <input type="url" name="website" autocomplete="url">
       </label>
     
       <label>
         Message
-        <textarea name="message" rows="4" required></textarea>
+        <textarea name="message" rows="4" autocomplete="on" required></textarea>
       </label>
 
       <label class="visually-hidden" aria-hidden="true">

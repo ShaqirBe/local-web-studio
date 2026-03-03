@@ -44,8 +44,6 @@ app.use((req, res, next) => {
   return next();
 });
 
-app.use(express.static('public', { extensions: ['html'] }));
-
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -169,6 +167,8 @@ app.post('/send', sendRateLimit, async (req, res) => {
     return res.status(500).json({ error: 'Error sending email.' });
   }
 });
+
+app.use(express.static('public', { extensions: ['html'] }));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
