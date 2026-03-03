@@ -32,14 +32,20 @@ Getting Started
     2.	Install dependencies: npm install
     3.	Create your local .env from the template:
        cp .env.example .env
-    4.	Fill .env with your credentials:
+    4.	Fill .env with your Gmail credentials:
 
 PORT=3000
-EMAIL_USER=youremail@gmail.com
-EMAIL_PASS=your-app-password
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASSWORD=your-gmail-app-password
 
     5.	Start the server: node server.js
     6.	Open in your browser at http://localhost:3000
+
+Gmail Setup
+
+    • Use a Gmail App Password (not your normal Gmail password)
+    • Turn on 2-Step Verification on your Google account
+    • Generate App Password in Google Account -> Security -> App passwords
 
 Production / Hosting
 
@@ -47,7 +53,7 @@ Do not upload .env to GitHub. In production, set the same keys directly in your 
 
     • PORT
     • EMAIL_USER
-    • EMAIL_PASS
+    • EMAIL_PASSWORD
 
 Notes
 

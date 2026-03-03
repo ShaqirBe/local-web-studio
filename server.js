@@ -5,17 +5,8 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const EMAIL_USER =
-  process.env.EMAIL_USER ||
-  process.env.EMAIL ||
-  process.env.email;
-const EMAIL_PASS =
-  process.env.EMAIL_PASSWORD ||
-  process.env.EMAIL_PASS ||
-  process.env.PASSWORD ||
-  process.env.password ||
-  process.env.PASS ||
-  process.env.pass;
+const EMAIL_USER = process.env.EMAIL_USER;
+const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 
 app.set('trust proxy', 1);
 app.disable('x-powered-by');
@@ -59,7 +50,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: EMAIL_USER,
-    pass: EMAIL_PASS,
+    pass: EMAIL_PASSWORD,
   },
 });
 
@@ -148,8 +139,8 @@ app.post('/send', sendRateLimit, async (req, res) => {
     return res.status(400).json({ error: 'Please provide a valid website URL.' });
   }
 
-  if (!EMAIL_USER || !EMAIL_PASS) {
-    console.error('Missing EMAIL_USER or EMAIL_PASS environment variables.');
+  if (!EMAIL_USER || !EMAIL_PASSWORD) {
+    console.error('Missing EMAIL_USER or EMAIL_PASSWORD environment variables.');
     return res.status(500).json({ error: 'Server configuration error.' });
   }
 
