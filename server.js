@@ -110,7 +110,7 @@ function isValidUrl(url) {
   }
 }
 
-app.post('/send', sendRateLimit, async (req, res) => {
+async function handleContactSubmit(req, res) {
   const business = normalizeString(req.body.business);
   const email = normalizeString(req.body.email).toLowerCase();
   const website = normalizeString(req.body.website);
@@ -166,7 +166,10 @@ app.post('/send', sendRateLimit, async (req, res) => {
     console.error('Error sending email:', err);
     return res.status(500).json({ error: 'Error sending email.' });
   }
-});
+}
+
+app.post('/send', sendRateLimit, handleContactSubmit);
+app.post('/api/send', sendRateLimit, handleContactSubmit);
 
 app.use(express.static('public', { extensions: ['html'] }));
 

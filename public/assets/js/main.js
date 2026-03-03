@@ -158,7 +158,7 @@ function setupContactForm() {
     }
 
     try {
-      const res = await fetch('/send', {
+      const res = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
