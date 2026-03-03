@@ -22,13 +22,7 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(express.json({ limit: '10kb' }));
 
 app.use((req, res, next) => {
-  const host = req.get('host') || '';
   const path = req.path || '/';
-
-  if (host.toLowerCase() === 'www.lwswarburg.de') {
-    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
-    return res.redirect(301, `https://lwswarburg.de${path}${query}`);
-  }
 
   if (path === '/index.html') {
     const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
